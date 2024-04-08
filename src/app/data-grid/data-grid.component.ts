@@ -8,8 +8,15 @@ export interface PeriodicElement {
   weight: number;
   symbol: string;
 }
-
-const ELEMENT_DATA: PeriodicElement[] = [
+@Component({
+  selector: 'app-data-grid',
+  templateUrl: './data-grid.component.html',
+  styleUrls: ['./data-grid.component.css'],
+  standalone: false
+})
+export class DataGridComponent {
+  
+  ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
@@ -22,14 +29,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
 
-@Component({
-  selector: 'app-data-grid',
-  templateUrl: './data-grid.component.html',
-  styleUrls: ['./data-grid.component.css'],
-  standalone: true,
-  imports: [MatTableModule],
-})
-export class DataGridComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  dataSource = this.ELEMENT_DATA;
+  
 }

@@ -5,6 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataGridComponent } from './data-grid/data-grid.component';
 import { AddDataComponent } from './add-data/add-data.component';
+import { MatTableModule } from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { AddDataComponent } from './add-data/add-data.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatTableModule,
+    MatButtonModule, 
+    MatDividerModule, 
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
